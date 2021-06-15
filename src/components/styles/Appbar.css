@@ -1,0 +1,12 @@
+.navbar {
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.navbar ul {
+    display: flex;
+    gap: 1rem
+}
+.navbar ul a {
+    display: block;
+}
