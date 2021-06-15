@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./views/home";
 import About from "./views/about";
 import SignIn from "./views/signin";
@@ -7,8 +7,8 @@ import { AuthStateProvider } from "./hooks/useAuthState";
 
 export function App() {
   return (
-    <Layout>
-      <AuthStateProvider>
+    <AuthStateProvider>
+      <Layout>
         <Switch>
           <Route path="/about">
             <About />
@@ -20,8 +20,8 @@ export function App() {
             <Home />
           </Route>
         </Switch>
-      </AuthStateProvider>
-    </Layout>
+      </Layout>
+    </AuthStateProvider>
   );
 }
 export default App;

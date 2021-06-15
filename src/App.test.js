@@ -22,7 +22,7 @@ describe("Application functionalit tests", () => {
     );
 
     fireEvent.click(utils.getByText(/sign in/i));
-    expect(utils.getByText(/authenticated/i)).toBeInTheDocument();
+    expect(utils.getByTestId('auth-button')).toBeInTheDocument();
     fireEvent.click(utils.getByText(/about/i));
     expect(utils.getByText(/about us/i)).toBeInTheDocument();
     fireEvent.click(utils.getByText(/company/i));
@@ -32,7 +32,7 @@ describe("Application functionalit tests", () => {
 
     //Redirected to sign in when edit jobs is clicked
     fireEvent.click(utils.getByText(/edit/i));
-    expect(utils.getByText(/authenticated/i)).toBeInTheDocument();
+    expect(utils.getByTestId('auth-button')).toBeInTheDocument();
   });
   it("should authenticate and verify if edit jobs is visible", () => {
     const utils = render(
@@ -41,7 +41,7 @@ describe("Application functionalit tests", () => {
       </MemoryRouter>
     );
     fireEvent.click(utils.getByText(/sign in/i));
-    fireEvent.click(utils.getByText(/authenticate/i));
+    fireEvent.click(utils.getByTestId('auth-button'));
     fireEvent.click(utils.getByText(/about/i));
     fireEvent.click(utils.getByText(/edit/i));
     expect(utils.getByText("Edit current Jobs")).toBeInTheDocument();
